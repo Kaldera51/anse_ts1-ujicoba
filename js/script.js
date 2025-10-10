@@ -726,18 +726,25 @@ function setupScheduleTabs() {
     const days = document.querySelectorAll('.schedule-day');
     
     tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const day = this.getAttribute('data-day');
-            
-            // Remove active class from all tabs and days
-            tabs.forEach(t => t.classList.remove('active'));
-            days.forEach(d => d.classList.remove('active'));
-            
-            // Add active class to current tab and day
-            this.classList.add('active');
-            document.querySelector(`.schedule-day[data-day="${day}"]`).classList.add('active');
-        });
+        // Gunakan both click dan touchstart events
+        tab.addEventListener('click', handleTabClick);
+        tab.addEventListener('touchstart', handleTabClick);
     });
+    
+    function handleTabClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const day = this.getAttribute('data-day');
+        
+        // Remove active class from all tabs and days
+        tabs.forEach(t => t.classList.remove('active'));
+        days.forEach(d => d.classList.remove('active'));
+        
+        // Add active class to current tab and day
+        this.classList.add('active');
+        document.querySelector(`.schedule-day[data-day="${day}"]`).classList.add('active');
+    }
 }
 
 function getTotalClasses() {
