@@ -489,13 +489,13 @@ function loadStudentCategory(containerId, students) {
     });
 }
 
-// Fungsi untuk modal detail siswa
+// Melihat detail siswa
 function setupStudentModals() {
     const modal = document.getElementById('studentModal');
     const closeBtn = document.querySelector('.close-modal');
     const studentCards = document.querySelectorAll('.student-card');
 
-    // Click event untuk student cards
+    // Click event detail siswa
     studentCards.forEach(card => {
         card.addEventListener('click', function() {
             const studentId = parseInt(this.getAttribute('data-id'));
