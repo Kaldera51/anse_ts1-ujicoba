@@ -38,7 +38,19 @@ mainLeaders: [
             bio: "Suka mengaji.",
             image: "images/students/aslam.jpg"
         },
-        { id: 2, name: "Ferly Apri Trisnadi", position: "Wakil Ketua", initials: "FAT", nim: "008" },
+        {
+            id: 2,
+            name: "Ferly Apri Trisnadi",
+            position: "Wakil Ketua",
+            initials: "FAT",
+            nim: "008",
+            birthDate: "04 April 2010",
+            address: "Kacu Banget, Kaliwungu, Kudus",
+            hobbies: ["Drawing"],
+            achievements: [],
+            bio: "Think by yourself.",
+            image: "images/students/ferly.jpg"
+        },
         {
             id: 3,
             name: "M. Rizqi Maulana",
@@ -50,7 +62,7 @@ mainLeaders: [
             hobbies: ["Roleplay", "Program"],
             achievements: [],
             bio: "Ingin menjadi programmer handal namun enggan ngoding.",
-            image: "images/students/rizqi-maulana.jpg"
+            image: "images/students/rizqi.jpg"
         },
         {
             id: 4,
@@ -1009,7 +1021,7 @@ function initializeMobileFeatures() {
     setupTouchEvents();
     preventZoomOnInput();
     optimizeMobilePerformance();
-    setupMobileTouchFix();
+    bileTouchFix();
 }
 
 // ===== HERO CENTERING FIX =====
@@ -1105,7 +1117,7 @@ function switchToPrevScheduleTab() {
 }
 
 // ===== FIXED MOBILE TOUCH FOR ALL ELEMENTS =====
-function setupMobileTouchFix() {
+function bileTouchFix() {
     console.log('Setting up mobile touch fix for ALL elements...');
     
     // Tunggu sampai semua element ready
@@ -1207,7 +1219,57 @@ function setupMobileTouchFix() {
                 return false;
             };
         });
-        
+
+        // === HERO BUTTON "Scroll untuk menjelajah" ===
+        const heroBtn = document.querySelector('.hero .btn-primary');
+        if (heroBtn) {
+            console.log('Found hero button');
+            const newHeroBtn = heroBtn.cloneNode(true);
+            heroBtn.parentNode.replaceChild(newHeroBtn, heroBtn);
+            
+            document.querySelector('.hero .btn-primary').onclick = function(e) {
+                console.log('Hero button CLICKED!');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const target = document.querySelector('#about');
+                if (target) {
+                    target.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }
+                return false;
+            };
+        }
+
+        // === CONTACT FORM SUBMIT BUTTON ===
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            console.log('Found contact form');
+            const newForm = contactForm.cloneNode(true);
+            contactForm.parentNode.replaceChild(newForm, contactForm);
+            
+            // Re-attach form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                console.log('Contact form SUBMITTED!');
+                e.preventDefault();
+                handleFormSubmission();
+            });
+            
+            // Juga attach click event langsung ke button
+            const submitBtn = document.getElementById('contactForm').querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.onclick = function(e) {
+                    console.log('Submit button CLICKED!');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleFormSubmission();
+                    return false;
+                };
+            }
+        }
+
         console.log('Mobile touch fix applied successfully!');
         
     }, 1500); // Tunggu 1.5 detik biar semua element benar-benar ready
