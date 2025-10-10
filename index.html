@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#8B4513">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Favicon untuk mobile -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <title>Kelas XI-A - MA NU Ma'arif Kudus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>KELAS XI-A TSM</h1>
+                        <p>MA NU Ma'arif Kudus - Tahun Ajaran 2025/2026</p>
+                    </div>
+                </div>
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="nav-link">Beranda</a></li>
+                        <li><a href="#about" class="nav-link">Tentang</a></li>
+                        <li><a href="#gallery" class="nav-link">Galeri</a></li>
+                        <li><a href="#students" class="nav-link">Siswa</a></li>
+                        <li><a href="#schedule" class="nav-link">Jadwal</a></li>
+                        <li><a href="#contact" class="nav-link">Kontak</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Selamat Datang di website Kelas XI-A TSM</h2>
+                <p class="hero-description">Kelas dengan murid paling nguwawor.</p>
+                <a href="#about" class="btn btn-primary">Scroll Untuk Menjelajah</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kelas Kami</h2>
+                <p>Mengenal lebih dekat dengan XI-A TSM</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3>29 Siswa Anomali</h3>
+                            <p>Semua siswa kami berkelakuan abnormal bjir</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <i class="fas fa-trophy"></i>
+                        <div>
+                            <h3>Prestasi?</h3>
+                            <p>Prestasi kelas kami hampir gaada jirlah</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <h3>Kekeluargaan</h3>
+                            <p>Kelas kami sangatlah harmonis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <i class="fas fa-school"></i>
+                        <p>Foto Kelas XI-A</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2>Album Kenangan</h2>
+                <p>Momen berharga selama pembelajaran</p>
+            </div>
+            <div class="gallery-grid">
+                <!-- Gallery items akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+<div id="galleryModal" class="gallery-modal">
+    <div class="gallery-modal-content">
+        <span class="close-gallery">&times;</span>
+        <div class="gallery-modal-body" id="galleryModalBody">
+            <!-- Konten akan diisi oleh JavaScript -->
+        </div>
+    </div>
+</div>
+
+    <!-- Students Section -->
+<section id="students" class="section-padding">
+    <div class="container">
+        <div class="section-title">
+            <h2>Siswa Kelas XI-A TSM</h2>
+            <p>Kumpulan Anomali Entitas Pribumi</p>
+        </div>
+        
+        <!-- Pengurus Inti -->
+        <div class="students-category">
+            <h3 class="category-title">Pengurus Inti</h3>
+            <div class="students-grid" id="main-leaders">
+                <!-- Data akan diisi oleh JavaScript -->
+            </div>
+        </div>
+
+        <!-- Koordinator Bidang -->
+        <div class="students-category">
+            <h3 class="category-title">Seksi-seksi</h3>
+            <div class="students-grid" id="coordinators">
+                <!-- Data akan diisi oleh JavaScript -->
+            </div>
+        </div>
+
+        <!-- Anggota Kelas -->
+        <div class="students-category">
+            <h3 class="category-title">Anggota Kelas</h3>
+            <div class="students-grid" id="class-members">
+                <!-- Data akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal untuk Detail Siswa -->
+<div id="studentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body" id="modalBody">
+            <!-- Konten modal akan diisi oleh JavaScript -->
+        </div>
+    </div>
+</div>
+
+    <!-- Schedule Section -->
+<section id="schedule" class="section-padding bg-light">
+    <div class="container">
+        <div class="section-title">
+            <h2>Jadwal Pelajaran</h2>
+            <p>Pembelajaran mingguan kelas XI-A Teknik Sepeda Motor</p>
+        </div>
+        <div class="schedule-container">
+            <!-- Schedule content will be loaded by JavaScript -->
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Kontak Kami</h2>
+                <p>Hubungi kami kalo butuh informasi lebih lanjut</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Alamat Sekolah</h3>
+                            <p>Jl. Raya Kudus - Jepara, Kedungdowo, Kaliwungu, Kab. Kudus</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>blm ada email.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>+62 234-5678-9012</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-user-tie"></i>
+                        <div>
+                            <h3>Wali Kelas</h3>
+                            <p>Bapak Muhammad Khoirul Fikri Maulana, S.Ag.</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Alamat Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" placeholder="Subjek Pesan" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Pesan Anda" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kelas XI-A</h3>
+                    <p>Tumpukan buku takkan menghianati masa depanmu.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Shortcut</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#students">Siswa</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Hubungi Kami</h3>
+                    <p><i class="fas fa-envelope"></i> blm ada email</p>
+                    <p><i class="fas fa-phone"></i> +62 234-5678-9012</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Media Sosial</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/anse_ts1.official" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://discord.gg/RcXkEUvdQE" target="_blank" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Arkeyariz Catur Sakti. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
