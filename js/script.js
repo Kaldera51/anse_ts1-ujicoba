@@ -3,7 +3,7 @@ const galleryData = [
     {
         id: 1,
         title: "Proklamasi",
-        description: "Foto sementara, dev malas apdet.",
+        description: "Isi dari galeri ini hanyalah sementara.",
         image: "images/gallery/merdeka.png",
         date: "17 Agustus 1945",
         location: "Batavia, Indonesia",
@@ -13,7 +13,7 @@ const galleryData = [
     {
         id: 2,
         title: "6 Jenderal, 1 Perwira",
-        description: "Foto sementara, dev malas apdet.",
+        description: "Isi dari galeri ini hanyalah sementara.",
         image: "images/gallery/g30s.jpg",
         date: "30 September 1965",
         location: "Djakarta, Indonesia",
@@ -23,7 +23,7 @@ const galleryData = [
     {
         id: 3,
         title: "Tragedi KA 220 vs KA 225",
-        description: "Foto sementara, dev malas apdet.",
+        description: "Isi dari galeri ini hanyalah sementara.",
         image: "images/gallery/bintaro.jpg",
         date: "19 Oktober 1987",
         location: "Jakarta, Indonesia",
@@ -33,7 +33,7 @@ const galleryData = [
     {
         id: 4,
         title: "Era Reformasi",
-        description: "Foto sementara, dev malas apdet.",
+        description: "Isi dari galeri ini hanyalah sementara.",
         image: "images/gallery/reformasi1998.jpg",
         date: "21 Mei 1998",
         location: "Jakarta, Indonesia",
@@ -43,7 +43,7 @@ const galleryData = [
     {
         id: 5,
         title: "Tsunami Aceh",
-        description: "Foto sementara, dev malas apdet.",
+        description: "Isi dari galeri ini hanyalah sementara.",
         image: "images/gallery/tsunami-aceh.jpg",
         date: "26 Desember 2004",
         location: "Aceh, Indonesia",
@@ -53,7 +53,7 @@ const galleryData = [
     {
         id: 6,
         title: "Tragedi Kanjuruhan",
-        description: "Foto sementara, dev malas apdet.",
+        description: "Isi dari galeri ini hanyalah sementara.",
         image: "images/gallery/kanjuruhan.jpg",
         date: "01 Oktober 2022",
         location: "Malang, Indonesia",
@@ -76,7 +76,7 @@ mainLeaders: [
             hobbies: ["Game", "Recite Prayers"],
             achievements: ["Juara 1 MTQ tingkat Kecamatan (2022)"],
             bio: "Suka mengaji.",
-            image: "images/students/aslam.jpg"
+            image: "images/students/default.png"
         },
         {
             id: 2,
@@ -85,11 +85,11 @@ mainLeaders: [
             initials: "FAT",
             nim: "008",
             birthDate: "04 April 2010",
-            address: "Kacu Banget, Kaliwungu, Kudus",
+            address: "Banget, Kaliwungu, Kudus",
             hobbies: ["Drawing"],
             achievements: [],
             bio: "Think by yourself.",
-            image: "images/students/ferly.jpg"
+            image: "images/students/default.png"
         },
         {
             id: 3,
@@ -102,7 +102,7 @@ mainLeaders: [
             hobbies: ["Roleplay", "Program"],
             achievements: [],
             bio: "Ingin menjadi programmer handal namun enggan ngoding.",
-            image: "images/students/rizqi.jpg"
+            image: "images/students/default.png"
         },
         {
             id: 4,
@@ -115,7 +115,7 @@ mainLeaders: [
             hobbies: ["Game", "Jogging", "Fishing"],
             achievements: [],
             bio: "Saya islam.",
-            image: "images/students/aris.jpg"
+            image: "images/students/default.png"
         }
     ],
     
@@ -127,11 +127,11 @@ mainLeaders: [
             initials: "MK",
             nim: "020",
             birthDate: "29 September 2009",
-            address: "Mijen Krajan, Kaliwungu, Kudus",
+            address: "Mijen, Kaliwungu, Kudus",
             hobbies: ["Volley Ball"],
             achievements: [],
             bio: "Rajin mengaji.",
-            image: "images/students/kholil.jpg"
+            image: "images/students/default.png"
         },
         {
             id: 6,
@@ -144,7 +144,7 @@ mainLeaders: [
             hobbies: ["Jogging", "Social Media"],
             achievements: [],
             bio: "Orang baik-baik, pendiam, dan murah hati.",
-            image: "images/students/andika.jpg"
+            image: "images/students/default.png"
         },
         {
             id: 7,
@@ -157,14 +157,50 @@ mainLeaders: [
             hobbies: ["Indoor Football", "Jogging"],
             achievements: ["Juara 1 Lomba Lari Sprint tingkat Kecamatan (2024)", "Juara 3 Lomba Puisi tingkat Sekolah (2024)"],
             bio: "Baik hati, sabar, dan tidak sombong.",
-            image: "images/students/yahya.jpg"
+            image: "images/students/default.png"
         },
-        { id: 8, name: "M. Yusuf Zakaria", position: "Seksi Olahraga", initials: "YZ", nim: "024" }
+        {
+            id: 8,
+            name: "M. Yusuf Zakaria",
+            position: "Seksi Olahraga",
+            initials: "YZ",
+            nim: "024",
+            birthDate: "17 April 2009",
+            address: "Kacu Banget, Kaliwungu, Kudus",
+            hobbies: ["Board Game"],
+            achievements: [],
+            bio: "no bio yet",
+            image: "images/students/default.png"
+        }
     ],
     
     classMembers: [
-        { id: 9, name: "Achmad Mahendra", position: "Anggota", initials: "AM", nim: "001" },
-        { id: 10, name: "Achmad Maulana Fahri", position: "Anggota", initials: "AMF", nim: "002" },
+        {
+            id: 9,
+            name: "Achmad Mahendra",
+            position: "Anggota",
+            initials: "AM",
+            nim: "001",
+            birthDate: "30 Maret 2009",
+            address: "Mijen Klisat, Kaliwungu, Kudus",
+            hobbies: ["Motorcycle"],
+            achievements: [],
+            bio: "no bio yet",
+            image: "images/students/default.png"
+        },
+        {
+            id: 10,
+            name: "Achmad Maulana Fahri",
+            position: "Anggota",
+            initials: "AMF",
+            nim: "002",
+            birthDate: "27 Mei 2010",
+            address: "Gamong, Kaliwungu, Kudus",
+            hobbies: ["Social Media"],
+            achievements: [],
+            bio: "no bio yet",
+            image: "images/students/default.png"
+        },
         {
             id: 11,
             name: "Achmad Miftahul Ula",
@@ -175,10 +211,10 @@ mainLeaders: [
             address: "-",
             hobbies: ["Game"],
             achievements: [],
-            bio: "print(\"Hello World\")",
-            image: "images/students/ula.jpg"
+            bio: "no bio yet",
+            image: "images/students/default.png"
         },
-        { id: 12, name: "Bagus Ahmad Dinijad", position: "Anggota", initials: "BAD", nim: "006" },
+        { id: 12, name: "Bagus Ahmad Dinijad", position: "Anggota", initials: "BAD", nim: "006", image: "images/students/default.png" },
         {
             id: 13,
             name: "Farel Firmansyah",
@@ -190,7 +226,7 @@ mainLeaders: [
             hobbies: ["Game"],
             achievements: [],
             bio: "Mboh, ak dewe yo rrti.",
-            image: "images/students/farel.jpg"
+            image: "images/students/default.png"
         },
         {
             id: 14,
@@ -203,9 +239,21 @@ mainLeaders: [
             hobbies: ["Motorcycle"],
             achievements: [],
             bio: "Galih belum besar tante.",
-            image: "images/students/galih.jpg"
+            image: "images/students/default.png"
         },
-        { id: 15, name: "Masyaril Kharom", position: "Anggota", initials: "MK", nim: "010" },
+        {
+            id: 15,
+            name: "Masyaril Kharom",
+            position: "Anggota",
+            initials: "MK",
+            nim: "010",
+            birthDate: "07 Desember 2009",
+            address: "Blimbing Kidul, Kaliwungu, Kudus",
+            hobbies: ["Sleeping in Class"],
+            achievements: [],
+            bio: "no bio yet",
+            image: "images/students/default.png"
+        },
         {
             id: 16,
             name: "Muhammad Doni",
@@ -217,9 +265,9 @@ mainLeaders: [
             hobbies: ["Motorcycle", "Social Media"],
             achievements: [],
             bio: "Sering tidur.",
-            image: "images/students/doni.jpg"
+            image: "images/students/default.png"
         },
-        { id: 17, name: "M. Abdul Ryan", position: "Anggota", initials: "AR", nim: "013" },
+        { id: 17, name: "M. Abdul Ryan", position: "Anggota", initials: "AR", nim: "013", image: "images/students/default.png" },
         {
             id: 18,
             name: "M. Afka Immanul Haq",
@@ -231,7 +279,7 @@ mainLeaders: [
             hobbies: ["Music", "Social Media"],
             achievements: [],
             bio: "Random Boy.",
-            image: "images/students/afka.jpg"
+            image: "images/students/default.png"
         },
         {
             id: 19,
@@ -240,14 +288,26 @@ mainLeaders: [
             initials: "DS",
             nim: "016",
             birthDate: "20 Desember 2008",
-            address: "Belimbing Kidul, Kaliwungu, Kudus",
+            address: "Blimbing Kidul, Kaliwungu, Kudus",
             hobbies: ["Game"],
             achievements: [],
             bio: "Ingin menjadi orang yang lebih baik dari kemarin.",
-            image: "images/students/dhika.jpg"
+            image: "images/students/default.png"
         },
-        { id: 20, name: "M. Dwi Rizky Pradipta", position: "Anggota", initials: "DRP", nim: "017" },
-        { id: 21, name: "M. Ilyas Sri Perdana", position: "Anggota", initials: "ISP", nim: "018" },
+        {
+            id: 20,
+            name: "M. Dwi Rizky Pradipta",
+            position: "Anggota",
+            initials: "DRP",
+            nim: "017",
+            birthDate: "24 Desember 2008",
+            address: "Mijen Klisat, Kaliwungu, Kudus",
+            hobbies: ["Motorcycle"],
+            achievements: [],
+            bio: "no bio yet",
+            image: "images/students/default.png"
+        },
+        { id: 21, name: "M. Ilyas Sri Perdana", position: "Anggota", initials: "ISP", nim: "018", image: "images/students/default.png" },
         {
             id: 22,
             name: "M. Kevin Muntakim",
@@ -256,10 +316,10 @@ mainLeaders: [
             nim: "019",
             birthDate: "07 Agustus 2009",
             address: "Mijen, Kaliwungu, Kudus",
-            hobbies: ["Video Editor", "Anime"],
+            hobbies: ["Video Editor", "Otaku"],
             achievements: [],
-            bio: "Kepin Dingin Banget Njing.",
-            image: "images/students/kevin.jpg"
+            bio: "Kepin Dingin Banget.",
+            image: "images/students/default.png"
         },
         {
             id: 23,
@@ -267,12 +327,12 @@ mainLeaders: [
             position: "Anggota",
             initials: "MM",
             nim: "021",
-            birthDate: "-",
+            birthDate: "13 Agustus 2009",
             address: "Mijen, Kaliwungu, Kudus",
-            hobbies: ["Fishing"],
+            hobbies: ["Game", "Fishing"],
             achievements: [],
-            bio: "-",
-            image: "images/students/masduqi.jpg"
+            bio: "Jangan lupa makan.",
+            image: "images/students/default.png"
         },
         {
             id: 24,
@@ -285,13 +345,49 @@ mainLeaders: [
             hobbies: ["Game"],
             achievements: [],
             bio: "Ramah, baik hati, humoris, tidak sombong, rajin ibadah, dan juga soft spoken.",
-            image: "images/students/akmal.jpg"
+            image: "images/students/default.png"
         },
-        { id: 25, name: "Rifky Akbar Nur Ramadhani", position: "Anggota", initials: "RANR", nim: "025" },
-        { id: 26, name: "Rizki Dhinar Widhianto", position: "Anggota", initials: "RDW", nim: "026" },
-        { id: 27, name: "Seno Indrawan", position: "Anggota", initials: "SI", nim: "027" },
-        { id: 28, name: "Sugi Rejo", position: "Anggota", initials: "SR", nim: "028" },
-        { id: 29, name: "M. Nailal Muna", position: "Anggota", initials: "NM", nim: "029" },
+        {
+            id: 25,
+            name: "Rifky Akbar Nur Ramadhani",
+            position: "Anggota",
+            initials: "RANR",
+            nim: "025",
+            birthDate: "18 September 2009",
+            address: "Gamong, Kaliwungu, Kudus",
+            hobbies: ["Social Media"],
+            achievements: [],
+            bio: "no bio yet",
+            image: "images/students/default.png"
+        },
+        { id: 26, name: "Rizki Dhinar Widhianto", position: "Anggota", initials: "RDW", nim: "026", image: "images/students/default.png" },
+        {
+            id: 27,
+            name: "Seno Indrawan",
+            position: "Anggota",
+            initials: "SI",
+            nim: "027",
+            birthDate: "12 Agustus 2009",
+            address: "Kacu Banget, Kaliwungu, Kudus",
+            hobbies: ["Motorcycle", "Social Media"],
+            achievements: [],
+            bio: "no bio yet",
+            image: "images/students/default.png"
+        },
+        {
+            id: 28,
+            name: "Sugi Rejo",
+            position: "Anggota",
+            initials: "SR",
+            nim: "028",
+            birthDate: "13 September 2009",
+            address: "Blimbing Kidul, Kaliwungu, Kudus",
+            hobbies: ["Game", "Social Media", "Roleplay"],
+            achievements: [],
+            bio: "no bio yet",
+            image: "images/students/default.png"
+        },
+        { id: 29, name: "M. Nailal Muna", position: "Anggota", initials: "NM", nim: "029", image: "images/students/default.png" },
     ]
 };
 
@@ -533,7 +629,7 @@ function showGalleryModal(item) {
     modal.style.display = 'block';
 }
 
-// Fungsi untuk load students
+// Fungsi loadStudents
 function loadStudents() {
     loadStudentCategory('main-leaders', studentsData.mainLeaders);
     loadStudentCategory('coordinators', studentsData.coordinators);
@@ -565,13 +661,13 @@ function loadStudentCategory(containerId, students) {
     });
 }
 
-// Fungsi untuk modal detail siswa
+// Fungsi untuk detail siswa
 function setupStudentModals() {
     const modal = document.getElementById('studentModal');
     const closeBtn = document.querySelector('.close-modal');
     const studentCards = document.querySelectorAll('.student-card');
 
-    // Click event untuk student cards
+    // Klik untuk membuka detail siswa
     studentCards.forEach(card => {
         card.addEventListener('click', function() {
             const studentId = parseInt(this.getAttribute('data-id'));
@@ -977,7 +1073,7 @@ function handleFormSubmission() {
             
         } else {
             hideBubble();
-            showBubble('error', 'Gagal Mengirim', 'Fitur ini blm ada');
+            showBubble('error', 'Gagal Mengirim', 'Fitur belom ada! NGEYEL!!!');
             
             // AUTO HIDE ERROR setelah 5 detik
             setTimeout(() => {

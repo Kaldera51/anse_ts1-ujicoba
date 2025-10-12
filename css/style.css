@@ -2211,3 +2211,24 @@ header {
     transform: translateZ(0);
     -webkit-transform: translateZ(0);
 }
+
+/* ===== FOOTER MOBILE FIX ===== */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+    
+    .footer-section {
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .footer-section p {
+        display: block !important;
+        text-align: center !important;
+        justify-content: center !important;
+        margin: 8px auto !important;
+        width: 100% !important;
+    }
+}
