@@ -2,22 +2,62 @@
 const galleryData = [
     {
         id: 1,
-        title: "Pergi berlibur ke Griffith Observatory",
-        description: "Datang ke Griffith Observatory, serasa main getea njir.",
-        image: "images/gallery/griffith.jpg",
-        date: "15 Juli 2025",
-        location: "Los Angeles, California",
-        category: "Wisata",
+        title: "Proklamasi",
+        description: "Foto sementara, dev malas apdet.",
+        image: "images/gallery/merdeka.png",
+        date: "17 Agustus 1945",
+        location: "Batavia, Indonesia",
+        category: "Merdeka",
         photos: 1
     },
     {
         id: 2,
-        title: "Mengunjungi The Strip di Las Vegas",
-        description: "Keren bercahaya abiezzz, serasa jadi mafia kelas kakap wak.",
-        image: "images/gallery/las-vegas-strip.jpg",
-        date: "08 April 2024",
-        location: "Las Vegas, Nevada",
-        category: "Wisata",
+        title: "6 Jenderal, 1 Perwira",
+        description: "Foto sementara, dev malas apdet.",
+        image: "images/gallery/g30s.jpg",
+        date: "30 September 1965",
+        location: "Djakarta, Indonesia",
+        category: "PeKa-Ih",
+        photos: 1
+    },
+    {
+        id: 3,
+        title: "Tragedi KA 220 vs KA 225",
+        description: "Foto sementara, dev malas apdet.",
+        image: "images/gallery/bintaro.jpg",
+        date: "19 Oktober 1987",
+        location: "Jakarta, Indonesia",
+        category: "Bintaro",
+        photos: 1
+    },
+    {
+        id: 4,
+        title: "Era Reformasi",
+        description: "Foto sementara, dev malas apdet.",
+        image: "images/gallery/reformasi1998.jpg",
+        date: "21 Mei 1998",
+        location: "Jakarta, Indonesia",
+        category: "Trisakti",
+        photos: 1
+    },
+    {
+        id: 5,
+        title: "Tsunami Aceh",
+        description: "Foto sementara, dev malas apdet.",
+        image: "images/gallery/tsunami-aceh.jpg",
+        date: "26 Desember 2004",
+        location: "Aceh, Indonesia",
+        category: "Bencana",
+        photos: 1
+    },
+    {
+        id: 6,
+        title: "Tragedi Kanjuruhan",
+        description: "Foto sementara, dev malas apdet.",
+        image: "images/gallery/kanjuruhan.jpg",
+        date: "01 Oktober 2022",
+        location: "Malang, Indonesia",
+        category: "Bola",
         photos: 1
     }
 ]
@@ -33,7 +73,7 @@ mainLeaders: [
             nim: "015",
             birthDate: "23 Juni 2010",
             address: "Mijen, Kaliwungu, Kudus",
-            hobbies: ["Helper"],
+            hobbies: ["Game", "Recite Prayers"],
             achievements: ["Juara 1 MTQ tingkat Kecamatan (2022)"],
             bio: "Suka mengaji.",
             image: "images/students/aslam.jpg"
@@ -73,7 +113,7 @@ mainLeaders: [
             birthDate: "09 Januari 2009",
             address: "Mijen Gadon, Kaliwungu, Kudus",
             hobbies: ["Game", "Jogging", "Fishing"],
-            achievements: ["Juara 1 Lomba Adzan tingkat Desa (2019)"],
+            achievements: [],
             bio: "Saya islam.",
             image: "images/students/aris.jpg"
         }
@@ -125,7 +165,19 @@ mainLeaders: [
     classMembers: [
         { id: 9, name: "Achmad Mahendra", position: "Anggota", initials: "AM", nim: "001" },
         { id: 10, name: "Achmad Maulana Fahri", position: "Anggota", initials: "AMF", nim: "002" },
-        { id: 11, name: "Achmad Miftahul Ula", position: "Anggota", initials: "AMU", nim: "003" },
+        {
+            id: 11,
+            name: "Achmad Miftahul Ula",
+            position: "Anggota",
+            initials: "AMU",
+            nim: "003",
+            birthDate: "-",
+            address: "-",
+            hobbies: ["Game"],
+            achievements: [],
+            bio: "print(\"Hello World\")",
+            image: "images/students/ula.jpg"
+        },
         { id: 12, name: "Bagus Ahmad Dinijad", position: "Anggota", initials: "BAD", nim: "006" },
         {
             id: 13,
@@ -140,7 +192,19 @@ mainLeaders: [
             bio: "Mboh, ak dewe yo rrti.",
             image: "images/students/farel.jpg"
         },
-        { id: 14, name: "Firdaus Galih Kurniawan", position: "Anggota", initials: "FGK", nim: "009" },
+        {
+            id: 14,
+            name: "Firdaus Galih Kurniawan",
+            position: "Anggota",
+            initials: "FGK",
+            nim: "009",
+            birthDate: "-",
+            address: "Sidorekso, Kaliwungu, Kudus",
+            hobbies: ["Motorcycle"],
+            achievements: [],
+            bio: "Galih belum besar tante.",
+            image: "images/students/galih.jpg"
+        },
         { id: 15, name: "Masyaril Kharom", position: "Anggota", initials: "MK", nim: "010" },
         {
             id: 16,
@@ -150,7 +214,7 @@ mainLeaders: [
             nim: "012",
             birthDate: "05 Januari 2009",
             address: "Sidorekso, Kaliwungu, Kudus",
-            hobbies: ["Social Media"],
+            hobbies: ["Motorcycle", "Social Media"],
             achievements: [],
             bio: "Sering tidur.",
             image: "images/students/doni.jpg"
@@ -164,7 +228,7 @@ mainLeaders: [
             nim: "014",
             birthDate: "08 Mei 2009",
             address: "Sidorekso, Kaliwungu, Kudus",
-            hobbies: ["Mount", "Travel"],
+            hobbies: ["Music", "Social Media"],
             achievements: [],
             bio: "Random Boy.",
             image: "images/students/afka.jpg"
@@ -192,12 +256,24 @@ mainLeaders: [
             nim: "019",
             birthDate: "07 Agustus 2009",
             address: "Mijen, Kaliwungu, Kudus",
-            hobbies: ["Video Editor"],
+            hobbies: ["Video Editor", "Anime"],
             achievements: [],
             bio: "Kepin Dingin Banget Njing.",
             image: "images/students/kevin.jpg"
         },
-        { id: 23, name: "Muhammad Masduqi", position: "Anggota", initials: "MM", nim: "021" },
+        {
+            id: 23,
+            name: "Muhammad Masduqi",
+            position: "Anggota",
+            initials: "MM",
+            nim: "021",
+            birthDate: "-",
+            address: "Mijen, Kaliwungu, Kudus",
+            hobbies: ["Fishing"],
+            achievements: [],
+            bio: "-",
+            image: "images/students/masduqi.jpg"
+        },
         {
             id: 24,
             name: "M. Maulana Akmal",
@@ -489,13 +565,13 @@ function loadStudentCategory(containerId, students) {
     });
 }
 
-// Melihat detail siswa
+// Fungsi untuk modal detail siswa
 function setupStudentModals() {
     const modal = document.getElementById('studentModal');
     const closeBtn = document.querySelector('.close-modal');
     const studentCards = document.querySelectorAll('.student-card');
 
-    // Click event detail siswa
+    // Click event untuk student cards
     studentCards.forEach(card => {
         card.addEventListener('click', function() {
             const studentId = parseInt(this.getAttribute('data-id'));
@@ -870,7 +946,7 @@ function handleFormSubmission() {
     const originalText = submitBtn.textContent;
     
     // Show loading bubble
-    showBubble('loading', 'Mengirim Pesan...', 'Sedang mengirim ke email kami');
+    showBubble('loading', 'Mengirim Pesan...', 'Tunggu Sampai Pesan Terkirim');
     
     // Disable button
     submitBtn.disabled = true;
@@ -901,7 +977,7 @@ function handleFormSubmission() {
             
         } else {
             hideBubble();
-            showBubble('error', 'Gagal Mengirim', 'Server down atau ada yang salah');
+            showBubble('error', 'Gagal Mengirim', 'Fitur ini blm ada');
             
             // AUTO HIDE ERROR setelah 5 detik
             setTimeout(() => {
