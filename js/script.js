@@ -1477,8 +1477,16 @@ function mobileBruteForceFix() {
             hamburger.style.marginRight = '0';
             console.log('✅ Hamburger di kanan');
         }
+
+        // === FIX 3: GALLERY LAYOUT ===
+        const galleryGrid = document.querySelector('.gallery-grid');
+        if (galleryGrid) {
+        galleryGrid.style.gridTemplateColumns = '1fr';
+        galleryGrid.style.gap = '15px';
+        console.log('✅ Gallery layout diforce');
+        }
         
-        // === FIX 3: STUDENT CARDS 2 KOLOM ===
+        // === FIX 4: STUDENT CARDS 2 KOLOM ===
         const studentGrids = document.querySelectorAll('.students-grid');
         studentGrids.forEach((grid, index) => {
             grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
