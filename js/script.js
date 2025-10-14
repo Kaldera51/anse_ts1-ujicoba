@@ -1446,3 +1446,58 @@ function bileTouchFix() {
         
     }, 1500); // Tunggu 1.5 detik biar semua element benar-benar ready
 }
+
+// MOBILE BRUTE FORCE FIX - PASTI WORK
+function mobileBruteForceFix() {
+    console.log('MOBILE FIX RUNNING...');
+    
+    if (window.innerWidth <= 768) {
+        // === FIX 1: NAMA SEKOLAH ===
+        const schoolName = document.querySelector('.logo-text p');
+        if (schoolName) {
+            schoolName.style.display = 'block';
+            schoolName.style.visibility = 'visible';
+            schoolName.style.opacity = '0.9';
+            schoolName.style.fontSize = '0.7rem';
+            schoolName.style.marginTop = '2px';
+            console.log('✅ Nama sekolah diforce');
+        }
+        
+        // === FIX 2: HAMBURGER DI KANAN ===
+        const headerContent = document.querySelector('.header-content');
+        if (headerContent) {
+            headerContent.style.justifyContent = 'space-between';
+            headerContent.style.alignItems = 'center';
+        }
+        
+        const hamburger = document.querySelector('.hamburger');
+        if (hamburger) {
+            hamburger.style.marginLeft = 'auto';
+            hamburger.style.marginRight = '0';
+            console.log('✅ Hamburger di kanan');
+        }
+        
+        // === FIX 3: STUDENT CARDS 2 KOLOM ===
+        const studentGrids = document.querySelectorAll('.students-grid');
+        studentGrids.forEach((grid, index) => {
+            grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            grid.style.gap = '12px';
+            console.log(`✅ Student grid ${index + 1} jadi 2 kolom`);
+        });
+        
+        const studentCards = document.querySelectorAll('.student-card');
+        studentCards.forEach(card => {
+            card.style.minHeight = '140px';
+            card.style.padding = '15px 10px';
+        });
+    }
+}
+
+// JALANKAN FIX
+document.addEventListener('DOMContentLoaded', function() {
+    mobileBruteForceFix();
+    setTimeout(mobileBruteForceFix, 1000); // Double tap
+});
+
+window.addEventListener('resize', mobileBruteForceFix);
+window.addEventListener('load', mobileBruteForceFix);
