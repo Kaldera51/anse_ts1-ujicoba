@@ -1611,7 +1611,8 @@ header {
     
     .logo-text p {
         font-size: 0.7rem;
-        display: none; /* Sembunyikan di mobile biar rapi */
+        opacity: 0.9;
+        margin-top: 2px;
     }
     
     .logo-icon {
@@ -2230,5 +2231,129 @@ header {
         justify-content: center !important;
         margin: 8px auto !important;
         width: 100% !important;
+    }
+}
+
+/* ===== MOBILE HEADER FIX ===== */
+@media (max-width: 768px) {
+    /* FIX 1: TAMPILKAN NAMA SEKOLAH */
+    .logo-text p {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 0.9 !important;
+        font-size: 0.7rem !important;
+        margin-top: 2px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    /* FIX 2: HAMBURGER DI KANAN */
+    .header-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    .logo {
+        flex: 1 !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    .navbar {
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .hamburger {
+        margin-left: 15px !important;
+    }
+    
+    /* FIX 3: STUDENT CARDS 2 KOLOM */
+    .students-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .student-card {
+        padding: 15px 10px !important;
+        min-height: 140px !important;
+    }
+}
+
+/* ===== MOBILE BRUTE FIX ===== */
+@media (max-width: 768px) {
+    /* FORCE 1: NAMA SEKOLAH HARUS MUNCUL */
+    .logo-text p {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 0.9 !important;
+        font-size: 0.7rem !important;
+        margin-top: 2px !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+    }
+    
+    /* FORCE 2: HAMBURGER DI KANAN */
+    .header-content {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    .logo {
+        flex: 1 !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+    }
+    
+    .navbar {
+        margin-left: auto !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    .hamburger {
+        margin-left: 15px !important;
+        margin-right: 0 !important;
+    }
+    
+    /* FORCE 3: STUDENT CARDS 2 KOLOM */
+    .students-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .student-card {
+        padding: 15px 10px !important;
+        min-height: 140px !important;
+    }
+    
+    .student-avatar {
+        width: 60px !important;
+        height: 60px !important;
+        margin: 0 auto 10px !important;
+    }
+    
+    .student-card h3 {
+        font-size: 0.9rem !important;
+        text-align: center !important;
+    }
+}
+
+/* ===== SMALL MOBILE FIX ===== */
+@media (max-width: 480px) {
+    .students-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .student-card {
+        padding: 12px 8px !important;
+        min-height: 120px !important;
     }
 }
