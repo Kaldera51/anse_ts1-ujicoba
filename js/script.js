@@ -502,6 +502,7 @@ function initializeWebsite() {
     initializeMobileFeatures();
     centerHeroSection();
     setupEventDelegation();
+    mobileBruteForceFix();
 }
 
 // Load Gallery Data
