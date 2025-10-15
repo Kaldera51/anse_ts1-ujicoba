@@ -62,6 +62,29 @@ const galleryData = [
     }
 ]
 
+// Data Wali Kelas - BARU
+const teacherData = {
+    name: "Muhammad Khoirul Fikri Maulana, S.Ag.",
+    position: "Wali Kelas XI-A TSM",
+    subject: "Wali Kelas terkece dan tergwanteng",
+    education: "S.Ag. (Sarjana Agama)",
+    experience: "1945",
+    specialization: "Pendidikan Agama Islam",
+    bio: "System.out.println(\"Kosong\");",
+    teachingPhilosophy: "System.out.println(\"Kosong\");",
+    subjects: [
+        "Nahwu Shorof",
+    ],
+    achievements: [
+        "-"
+    ],
+    motto: "Motto guru belom ada",
+    joinDate: "1453",
+    studentsCount: 29,
+    subjectsCount: 1,
+    image: "images/students/default.png"
+};
+
 // Data siswa
 const studentsData = {
 mainLeaders: [
@@ -380,7 +403,7 @@ mainLeaders: [
             position: "Anggota",
             initials: "SR",
             nim: "028",
-            birthDate: "13 September 2009",
+            birthDate: "15 September 2009",
             address: "Blimbing Kidul, Kaliwungu, Kudus",
             hobbies: ["Game", "Social Media", "Roleplay"],
             achievements: [],
@@ -499,6 +522,9 @@ function initializeWebsite() {
     setupEventListeners();
     setupScrollEffects();
     setupStudentModals();
+    renderTeacherCard();
+    setupTeacherEvents();
+    setupModalCloseEvents();
     initializeMobileFeatures();
     centerHeroSection();
     setupEventDelegation();
@@ -665,10 +691,10 @@ function loadStudentCategory(containerId, students) {
 // Fungsi untuk detail siswa
 function setupStudentModals() {
     const modal = document.getElementById('studentModal');
-    const closeBtn = document.querySelector('.close-modal');
+    const closeBtn = modal.querySelector('.close-modal');
+    
+    // Student cards click event (yang existing)
     const studentCards = document.querySelectorAll('.student-card');
-
-    // Klik untuk membuka detail siswa
     studentCards.forEach(card => {
         card.addEventListener('click', function() {
             const studentId = parseInt(this.getAttribute('data-id'));
@@ -679,21 +705,23 @@ function setupStudentModals() {
         });
     });
 
-    // Close modal
-    closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-
-    // Close modal ketika klik di luar
+    // PASTIKAN CLOSE EVENTS ADA - tambahin kalo belum ada
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
+    
+    // Click outside
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
     });
-
-    // Close dengan ESC key
+    
+    // ESC key
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
             modal.style.display = 'none';
         }
     });
@@ -834,6 +862,241 @@ function showStudentModal(student) {
     `;
     
     modal.style.display = 'block';
+}
+
+// Fungsi untuk menampilkan modal wali kelas - BARU
+function showTeacherModal() {
+    const modal = document.getElementById('teacherModal');
+    const modalBody = document.getElementById('teacherModalBody');
+    
+    modalBody.innerHTML = `
+        <div class="teacher-modal-header">
+            <div class="teacher-modal-avatar">
+               ${teacherData.image ? 
+                    `<img src="${teacherData.image}" alt="${teacherData.name}" 
+                          style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"
+                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                     <i class="fas fa-user-tie" style="display: none; font-size: 3rem; color: white;"></i>` :
+                    `<i class="fas fa-user-tie" style="font-size: 3rem; color: white;"></i>`
+                }
+            </div>
+            <h2 class="teacher-modal-title">${teacherData.name}</h2>
+            <p class="teacher-modal-subtitle">${teacherData.position}</p>
+        </div>
+        
+        <div class="teacher-modal-body">
+            <!-- Informasi Pribadi -->
+            <div class="teacher-info-grid">
+                <div class="teacher-info-card">
+                    <h4><i class="fas fa-graduation-cap"></i> Pendidikan</h4>
+                    <div class="teacher-detail-item">
+                        <span class="detail-label">Gelar</span>
+                        <span class="detail-value">${teacherData.education}</span>
+                    </div>
+                    <div class="teacher-detail-item">
+                        <span class="detail-label">Spesialisasi</span>
+                        <span class="detail-value">${teacherData.specialization}</span>
+                    </div>
+                </div>
+                
+                <div class="teacher-info-card">
+                    <h4><i class="fas fa-briefcase"></i> Pengalaman</h4>
+                    <div class="teacher-detail-item">
+                        <span class="detail-label">Mengajar</span>
+                        <span class="detail-value">${teacherData.experience}</span>
+                    </div>
+                    <div class="teacher-detail-item">
+                        <span class="detail-label">Bergabung</span>
+                        <span class="detail-value">Tahun ${teacherData.joinDate}</span>
+                    </div>
+                </div>
+                
+                <div class="teacher-info-card">
+                    <h4><i class="fas fa-chalkboard-teacher"></i> Mengajar</h4>
+                    <div class="teacher-detail-item">
+                        <span class="detail-label">Siswa</span>
+                        <span class="detail-value">${teacherData.studentsCount} siswa</span>
+                    </div>
+                    <div class="teacher-detail-item">
+                        <span class="detail-label">Mapel</span>
+                        <span class="detail-value">${teacherData.subjectsCount} bidang</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mata Pelajaran -->
+            <div class="teacher-info-card">
+                <h4><i class="fas fa-book"></i> Mata Pelajaran</h4>
+                <div class="teacher-subjects">
+                    ${teacherData.subjects.map(subject => `
+                        <span class="subject-tag">${subject}</span>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <!-- Filosofi Mengajar -->
+            <div class="teacher-bio-section">
+                <h3><i class="fas fa-lightbulb"></i> Filosofi Mengajar</h3>
+                <p class="teacher-bio-text">${teacherData.teachingPhilosophy}</p>
+            </div>
+            
+            <!-- Tentang -->
+            <div class="teacher-bio-section">
+                <h3><i class="fas fa-user"></i> Tentang Saya</h3>
+                <p class="teacher-bio-text">${teacherData.bio}</p>
+            </div>
+            
+            <!-- Prestasi -->
+            <div class="teacher-info-card">
+                <h4><i class="fas fa-trophy"></i> Prestasi & Sertifikasi</h4>
+                <div style="margin-top: 15px;">
+                    ${teacherData.achievements.map(achievement => `
+                        <div class="teacher-detail-item">
+                            <span class="detail-label">
+                                <i class="fas fa-award" style="color: var(--primary-color);"></i>
+                            </span>
+                            <span class="detail-value" style="text-align: left; flex: 1; margin-left: 10px;">${achievement}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <!-- Kontak -->
+            <div class="teacher-contact-links">
+                ${teacherData.email ? `
+                    <a href="mailto:${teacherData.email}" class="teacher-contact-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                ` : ''}
+                
+                ${teacherData.phone ? `
+                    <a href="tel:${teacherData.phone}" class="teacher-contact-link">
+                        <i class="fas fa-phone"></i> Telepon
+                    </a>
+                ` : ''}
+                
+                <button class="teacher-contact-link" style="background: var(--accent-color); border: none; cursor: default;">
+                    <i class="fas fa-quote-left"></i> "${teacherData.motto}"
+                </button>
+            </div>
+        </div>
+    `;
+    
+    modal.style.display = 'block';
+}
+
+// Function untuk render teacher card
+function renderTeacherCard() {
+    const container = document.getElementById('teacherCardContainer');
+    
+    container.innerHTML = `
+        <div class="teacher-card" id="teacherCard">
+            <div class="teacher-avatar">
+                <div class="avatar-image">
+                    ${teacherData.image ? 
+                        `<img src="${teacherData.image}" alt="${teacherData.name}" 
+                              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                         <i class="fas fa-user-tie" style="display: none; font-size: 4rem; color: white;"></i>` :
+                        `<i class="fas fa-user-tie" style="font-size: 4rem; color: white;"></i>`
+                    }
+                </div>
+                <div class="teacher-badge">
+                    <i class="fas fa-star"></i>
+                    Wali Kelas
+                </div>
+            </div>
+            
+            <div class="teacher-info">
+                <h3 class="teacher-name">${teacherData.name}</h3>
+                <p class="teacher-subject">${teacherData.subject}</p>
+                
+                <div class="teacher-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">${teacherData.studentsCount}</span>
+                        <span class="stat-label">Siswa</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">${teacherData.subjectsCount}</span>
+                        <span class="stat-label">Bidang Studi</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">${teacherData.experience}</span>
+                        <span class="stat-label">Tahun Mengajar</span>
+                    </div>
+                </div>
+                
+                <div class="teacher-quote">
+                    <i class="fas fa-quote-left"></i>
+                    "${teacherData.motto}"
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                
+                <button class="btn btn-primary" id="viewTeacherDetail">
+                    <i class="fas fa-info-circle"></i> Lihat Profil Lengkap
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+// Setup event listeners untuk wali kelas
+function setupTeacherEvents() {
+    const teacherCard = document.getElementById('teacherCard');
+    const viewTeacherBtn = document.getElementById('viewTeacherDetail');
+    
+    if (teacherCard) {
+        // Remove any existing listeners dulu
+        const newCard = teacherCard.cloneNode(true);
+        teacherCard.parentNode.replaceChild(newCard, teacherCard);
+        
+        // Re-attach dengan cara yang bener
+        document.getElementById('teacherCard').addEventListener('click', function(e) {
+            // Hanya trigger kalo bukan klik tombol
+            if (!e.target.closest('button')) {
+                showTeacherModal();
+            }
+        });
+    }
+    
+    if (viewTeacherBtn) {
+        // Remove existing dulu
+        const newBtn = viewTeacherBtn.cloneNode(true);
+        viewTeacherBtn.parentNode.replaceChild(newBtn, viewTeacherBtn);
+        
+        // Re-attach
+        document.getElementById('viewTeacherDetail').addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            showTeacherModal();
+        });
+    }
+}
+
+// HANDLE CLOSE MODAL
+function setupModalCloseEvents() {
+    const teacherModal = document.getElementById('teacherModal');
+    const closeBtn = teacherModal.querySelector('.close-modal');
+    
+    // Close button
+    closeBtn.onclick = function() {
+        teacherModal.style.display = 'none';
+    };
+    
+    // Click outside modal
+    teacherModal.onclick = function(e) {
+        if (e.target === teacherModal) {
+            teacherModal.style.display = 'none';
+        }
+    };
+    
+    // ESC key - FIX YANG INI!
+    document.addEventListener('keydown', function handleEsc(e) {
+        if (e.key === 'Escape' && teacherModal.style.display === 'block') {
+            teacherModal.style.display = 'none';
+            // Remove event listener setelah dipakai
+            document.removeEventListener('keydown', handleEsc);
+        }
+    });
 }
 
 // Load Schedule Data
@@ -1448,7 +1711,7 @@ function bileTouchFix() {
     }, 1500); // Tunggu 1.5 detik biar semua element benar-benar ready
 }
 
-// MOBILE BRUTE FORCE FIX - PASTI WORK
+// MOBILE BRUTE FORCE FIX
 function mobileBruteForceFix() {
     console.log('MOBILE FIX RUNNING...');
     

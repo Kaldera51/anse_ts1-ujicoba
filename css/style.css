@@ -2479,3 +2479,412 @@ header {
         justify-content: center !important;
     }
 }
+
+/* ===== TEACHER SECTION STYLES ===== */
+.teacher-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+.teacher-avatar {
+    position: relative;
+    text-align: center;
+}
+
+.avatar-image {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid var(--secondary-color);
+    box-shadow: 0 10px 30px rgba(139, 69, 19, 0.3);
+    overflow:hidden;
+}
+
+.avatar-image i {
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.teacher-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.teacher-info {
+    padding: 20px 0;
+}
+
+.teacher-name {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.teacher-subject {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.teacher-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: var(--light-color);
+    border-radius: 12px;
+    border: 1px solid var(--secondary-color);
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.teacher-quote {
+    background: var(--gray-light);
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-color);
+    font-style: italic;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.teacher-quote i:first-child {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.teacher-quote i:last-child {
+    color: var(--primary-color);
+    margin-left: 10px;
+}
+
+/* Teacher Modal Styles */
+.teacher-modal-content {
+    max-width: 800px;
+    margin: 2% auto;
+}
+
+.teacher-modal-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher-modal-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.teacher-modal-avatar {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.teacher-modal-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.teacher-modal-avatar i {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.teacher-modal-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.teacher-modal-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+.teacher-modal-body {
+    padding: 40px;
+}
+
+.teacher-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.teacher-info-card {
+    background: var(--gray-light);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.teacher-info-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.teacher-info-card h4 i {
+    color: var(--secondary-color);
+}
+
+.teacher-detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.teacher-detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-value {
+    color: var(--dark-color);
+    text-align: right;
+}
+
+.teacher-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.subject-tag {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.teacher-bio-section {
+    background: var(--light-color);
+    padding: 30px;
+    border-radius: 12px;
+    margin: 25px 0;
+    border: 1px solid var(--secondary-color);
+}
+
+.teacher-bio-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.teacher-bio-section h3 i {
+    color: var(--secondary-color);
+}
+
+.teacher-bio-text {
+    line-height: 1.7;
+    color: var(--dark-color);
+    text-align: justify;
+}
+
+.teacher-contact-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.teacher-contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.teacher-contact-link:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    color: var(--white);
+}
+
+/* Responsive Teacher Section */
+@media (max-width: 968px) {
+    .teacher-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .teacher-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher-card {
+        padding: 30px 20px;
+        margin: 0 10px;
+    }
+    
+    .teacher-name {
+        font-size: 1.8rem;
+    }
+    
+    .teacher-subject {
+        font-size: 1.1rem;
+    }
+    
+    .teacher-stats {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .stat-item {
+        padding: 15px;
+    }
+    
+    .teacher-modal-body {
+        padding: 25px 20px;
+    }
+    
+    .teacher-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .teacher-contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .teacher-contact-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-card {
+        padding: 25px 15px;
+    }
+    
+    .avatar-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .avatar-image i {
+        font-size: 3rem;
+    }
+    
+    .teacher-name {
+        font-size: 1.5rem;
+    }
+    
+    .teacher-modal-title {
+        font-size: 1.5rem;
+    }
+}

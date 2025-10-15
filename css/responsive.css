@@ -219,3 +219,41 @@
         align-items: center !important;
     }
 }
+
+/* Teacher Section Mobile Fix */
+@media (max-width: 768px) {
+    .teacher-card {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        padding: 25px 20px !important;
+        margin: 0 10px !important;
+    }
+    
+    .teacher-stats {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .teacher-name {
+        font-size: 1.6rem !important;
+    }
+    
+    .avatar-image {
+        width: 150px !important;
+        height: 150px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-stats {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .teacher-name {
+        font-size: 1.4rem !important;
+    }
+    
+    .teacher-subject {
+        font-size: 1rem !important;
+    }
+}
