@@ -48,7 +48,7 @@ const teacherData = {
     achievements: [
         "-"
     ],
-    motto: "Kata-kata Hari Ini Pak Guru",
+    motto: "(Motto Hidup)",
     joinDate: "-",
     studentsCount: 29,
     subjectsCount: 1,
