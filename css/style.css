@@ -2465,7 +2465,7 @@ header {
         flex-shrink: 0 !important;
     }
     
-    /* STUDENT CARDS - FORCE 2 KOLOM */
+    /* 2 KOLOM List Siswa */
     .students-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 12px !important;
