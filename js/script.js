@@ -2,7 +2,7 @@
 const galleryData = [
     {
         id: 1,
-        title: "Slot Kosong",
+        title: "Galeri 1",
         description: "Galeri blm diisi.",
         image: "",
         date: "01 Februari 2003",
@@ -12,7 +12,7 @@ const galleryData = [
     },
     {
         id: 2,
-        title: "Slot Kosong",
+        title: "Galeri 2",
         description: "Galeri blm diisi.",
         image: "",
         date: "04 Mei 2006",
@@ -22,7 +22,7 @@ const galleryData = [
     },
     {
         id: 3,
-        title: "Slot Kosong",
+        title: "Galeri 3",
         description: "Galeri blm diisi.",
         image: "",
         date: "07 Agustus 2009",
